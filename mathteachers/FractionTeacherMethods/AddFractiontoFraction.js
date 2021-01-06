@@ -8,7 +8,7 @@ import {fractionLatex} from './../FractionTeacher'
 const teaching = FractionTeaching;
 
 //tells lesson or adds a fraction
-export const addAFraction=(args) =>{
+export const addAFraction=(args) => {
   if (args === undefined) {
     let initialization = teaching.addAFraction()
     let lesson = [

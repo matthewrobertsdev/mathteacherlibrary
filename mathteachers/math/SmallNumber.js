@@ -1,4 +1,4 @@
-import LimitBreachDetector from '../../../utilities/LimitBreachDetector'
+import LimitBreachDetector from './LimitBreachDetector'
 
 class SmallNumber{
 
