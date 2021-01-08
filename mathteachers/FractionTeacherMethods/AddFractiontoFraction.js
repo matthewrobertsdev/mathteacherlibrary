@@ -120,7 +120,7 @@ export const addAFraction=(args) => {
         teaching.multiplyFractionsByMultiple(fractionLatex(fraction1.numerator, fraction1.denominator),
         `${fractionLatex(`${fraction1.numerator}\\cdot${factor1}`, `${fraction1.denominator}\\cdot${factor1}`)}
         =${fractionLatex(newNumerator1, lcd)}`, 
-        fraction2.numerator, fraction1.denominator, factor1, newNumerator1,
+        fraction1.numerator, fraction1.denominator, factor1, newNumerator1,
         lcd),
         teaching.multiplyFractionsByMultiple(fractionLatex(fraction2.numerator, fraction2.denominator),
         `${fractionLatex(`${fraction2.numerator}\\cdot${factor2}`, `${fraction2.denominator}\\cdot${factor2}`)}

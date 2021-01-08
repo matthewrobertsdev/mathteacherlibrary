@@ -511,7 +511,7 @@ to learn why.`])
     We have ${numerator1} plus ${numerator2}, all over ${denom}.`,
       `{$bl}${latex1}=${latex2}{$bl}begin fraction ${numerator1} plus ${numerator2} \
     over ${denom} end fraction equals begin fraction ${sum} \
-    over ${denom} end fraction equals`
+    over ${denom} end fraction`
     ]
   }
 
