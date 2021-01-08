@@ -2,7 +2,7 @@ import FractionTeaching from '../mathteachings/FractionTeaching';
 import Fraction from '../math/Fraction'
 import PrimeFactorization from '../math/PrimeFactorization';
 import Product from '../math/Product';
-import ListUtility from '../../../utilities/ListUtility';
+import ListUtility from '../../utilities/ListUtility';
 import {fractionLatex} from './../FractionTeacher'
 
 const teaching = FractionTeaching;

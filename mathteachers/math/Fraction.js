@@ -1,6 +1,6 @@
 import PrimeFactorization from './PrimeFactorization';
 import Product from './Product';
-import ListUtility from '../../../utilities/ListUtility';
+import ListUtility from '../../utilities/ListUtility'
 import MathTeachingObject from './MathTeachingObject';
 class Fraction extends MathTeachingObject{
     constructor(){
