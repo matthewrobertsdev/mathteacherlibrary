@@ -120,12 +120,12 @@ export const addAFraction=(args) => {
         teaching.multiplyFractionsByMultiple(fractionLatex(fraction1.numerator, fraction1.denominator),
         `${fractionLatex(`${fraction1.numerator}\\cdot${factor1}`, `${fraction1.denominator}\\cdot${factor1}`)}
         =${fractionLatex(newNumerator1, lcd)}`, 
-        numerator1, fraction1.denominator, factor1, newNumerator1,
+        fraction2.numerator, fraction1.denominator, factor1, newNumerator1,
         lcd),
         teaching.multiplyFractionsByMultiple(fractionLatex(fraction2.numerator, fraction2.denominator),
         `${fractionLatex(`${fraction2.numerator}\\cdot${factor2}`, `${fraction2.denominator}\\cdot${factor2}`)}
         =${fractionLatex(newNumerator2, lcd)}`, 
-        numerator2, fraction2.denominator, factor2, newNumerator2,
+        fraction2.numerator, fraction2.denominator, factor2, newNumerator2,
         lcd),
         teaching.tellAddNumerators(lcd, newNumerator1, newNumerator2,
           fractionLatex(`${newNumerator1}+${newNumerator2}`, lcd),
@@ -175,7 +175,7 @@ function tellFactorLCDSolution(initialization, denom1, numerator1, numerator2, d
 }
 
 //shows a fraction addition
-function initAddAFraction(num1, denom1, num2, denom2) {
+export const initAddAFraction=function initAddAFraction(num1, denom1, num2, denom2) {
   return (
     teaching.initAddAFraction(num1, denom1, num2, denom2,
       `${fractionLatex(num1, denom1)}+${fractionLatex(num2, denom2)}`)
@@ -183,7 +183,7 @@ function initAddAFraction(num1, denom1, num2, denom2) {
 }
 
 //simplifies a fraction
-function tryToSimplify(numerator, denom, fraction) {
+export const tryToSimplify=function tryToSimplify(numerator, denom, fraction) {
   if (numerator !== fraction.numerator) {
     if (numerator % denom === 0) {
       return [teaching.tellSimplificationToInteger(numerator, denom,

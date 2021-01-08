@@ -546,8 +546,7 @@ to learn why.`])
       [
         `{str}We must get`,
         `{$bl}${latex1}{$bl}${this.fractionDescription(
-          numerator, denom)} \
-          equals ${this.fractionDescription(numerator, denom)}`,
+          numerator, denom)}`,
         `{str}over the LCD ${lcd}. `,
           `{br}`,
         `{str}We do this by dividing the LCD, ${lcd}, by the denominator, ${denom}, \
