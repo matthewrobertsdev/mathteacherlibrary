@@ -44,15 +44,15 @@ class FractionTeacher {
     )
   }
 
-  fromNumeratorAndDenominator(args, generate){
+  fromNumeratorAndDenominator(args){
     return this.solve(fromNumeratorAndDenominator, args)
   }
 
-  fromInteger(args, generate){
+  fromInteger(args){
     return this.solve(fromInteger, args)
   }
 
-  addAFraction(args, generate){
+  addAFraction(args){
     return this.solve(addAFraction, args)
   }
 
