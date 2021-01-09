@@ -44,19 +44,19 @@ class FractionTeacher {
     )
   }
 
-  fromNumeratorAndDenominator(args){
-    return this.teach(fromNumeratorAndDenominator, args)
+  fromNumeratorAndDenominator(args, generate){
+    return this.solve(fromNumeratorAndDenominator, args)
   }
 
-  fromInteger(args){
-    return this.teach(fromInteger, args)
+  fromInteger(args, generate){
+    return this.solve(fromInteger, args)
   }
 
-  addAFraction(args){
-    return this.teach(addAFraction, args)
+  addAFraction(args, generate){
+    return this.solve(addAFraction, args)
   }
 
-  teach(method, args){
+  solve(method, args){
     try{
       const teaching=method(args)
       console.log(teaching)
