@@ -16,6 +16,7 @@ class FractionTeacher {
   //the teaching with the String functions
   teaching = FractionTeaching;
 
+  /*
   fromNumeratorAndDenominatorProblem(args){
     const splitArgs=args.split('@')
     const num1=parseInt(splitArgs[2])
@@ -43,6 +44,7 @@ class FractionTeacher {
         `${fractionLatex(num1, denom1)}+${fractionLatex(num2, denom2)}`)
     )
   }
+  */
 
   fromNumeratorAndDenominator(args){
     return this.solve(fromNumeratorAndDenominator, args)
