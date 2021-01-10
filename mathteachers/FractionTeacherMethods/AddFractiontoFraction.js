@@ -206,9 +206,3 @@ export const tryToSimplify=function tryToSimplify(numerator, denom, fraction) {
     teaching.checkOutSimplifyingFractions]
   }
 }
-
-export const generateAddAFractionArgs=function generateAddAFractionArgs() {
-  let argsArray=getRandomIntArray(4, 0, 60)
-  argsArray.unshift('')
-  return argsArray
-}

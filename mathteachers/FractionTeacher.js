@@ -1,5 +1,5 @@
 import FractionTeaching from './mathteachings/FractionTeaching';
-import {addAFraction, generateAddAFractionProblem} from './FractionTeacherMethods/AddFractiontoFraction'
+import {addAFraction, generateAddAFractionArgs} from './FractionTeacherMethods/AddFractiontoFraction'
 import {fromNumeratorAndDenominator} from './FractionTeacherMethods/CreatFromNumeratorAndDenominator'
 import {fromInteger} from './FractionTeacherMethods/CreateFractionFromInteger'
 
@@ -70,9 +70,8 @@ class FractionTeacher {
     }
   }
 
-  generateAddAFractionProblem(){
-    const args=generateAddAFractionArgs()
-    return this.teach(addAFraction, args)
+  addAFractionArgs() {
+    return getRandomIntArray(4, 0, 60)
   }
 
 }
