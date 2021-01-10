@@ -1,5 +1,5 @@
 import FractionTeaching from './mathteachings/FractionTeaching';
-import {addAFraction} from './FractionTeacherMethods/AddFractiontoFraction'
+import {addAFraction, generateAddAFractionProblem} from './FractionTeacherMethods/AddFractiontoFraction'
 import {fromNumeratorAndDenominator} from './FractionTeacherMethods/CreatFromNumeratorAndDenominator'
 import {fromInteger} from './FractionTeacherMethods/CreateFractionFromInteger'
 
@@ -47,18 +47,18 @@ class FractionTeacher {
   */
 
   fromNumeratorAndDenominator(args){
-    return this.solve(fromNumeratorAndDenominator, args)
+    return this.teach(fromNumeratorAndDenominator, args)
   }
 
   fromInteger(args){
-    return this.solve(fromInteger, args)
+    return this.teach(fromInteger, args)
   }
 
   addAFraction(args){
-    return this.solve(addAFraction, args)
+    return this.teach(addAFraction, args)
   }
 
-  solve(method, args){
+  teach(method, args){
     try{
       const teaching=method(args)
       console.log(teaching)
@@ -68,6 +68,11 @@ class FractionTeacher {
       console.log(error)
       return [this.teaching.tellBadInput()]
     }
+  }
+
+  generateAddAFractionProblem(){
+    const args=generateAddAFractionArgs()
+    return this.teach(addAFraction, args)
   }
 
 }

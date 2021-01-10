@@ -4,6 +4,7 @@ import PrimeFactorization from '../math/PrimeFactorization';
 import Product from '../math/Product';
 import ListUtility from '../../utilities/ListUtility';
 import {fractionLatex} from './../FractionTeacher'
+import {getRandomIntArray} from '../../utilities/GetRandomInt'
 
 const teaching = FractionTeaching;
 
@@ -204,4 +205,10 @@ export const tryToSimplify=function tryToSimplify(numerator, denom, fraction) {
       `{br}`,
     teaching.checkOutSimplifyingFractions]
   }
+}
+
+export const generateAddAFractionArgs=function generateAddAFractionArgs() {
+  let argsArray=getRandomIntArray(4, 0, 60)
+  argsArray.unshift('')
+  return argsArray
 }
