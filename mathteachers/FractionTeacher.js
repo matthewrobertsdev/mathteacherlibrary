@@ -72,7 +72,7 @@ class FractionTeacher {
   }
 
   addAFractionArgs() {
-    return getRandomIntArray(4, 0, 60)
+    return getRandomIntArray(4, 0, 12)
   }
 
 }
