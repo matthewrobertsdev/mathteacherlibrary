@@ -4,7 +4,6 @@ import PrimeFactorization from '../math/PrimeFactorization';
 import Product from '../math/Product';
 import ListUtility from '../../utilities/ListUtility';
 import {fractionLatex} from './../FractionTeacher'
-import {getRandomIntArray} from '../../utilities/GetRandomInt'
 
 const teaching = FractionTeaching;
 
