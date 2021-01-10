@@ -1,7 +1,8 @@
 import FractionTeaching from './mathteachings/FractionTeaching';
-import {addAFraction, generateAddAFractionArgs} from './FractionTeacherMethods/AddFractiontoFraction'
+import {addAFraction} from './FractionTeacherMethods/AddFractiontoFraction'
 import {fromNumeratorAndDenominator} from './FractionTeacherMethods/CreatFromNumeratorAndDenominator'
 import {fromInteger} from './FractionTeacherMethods/CreateFractionFromInteger'
+import {getRandomIntArray} from '../utilities/GetRandomInt'
 
 
 //latex for a fraction
