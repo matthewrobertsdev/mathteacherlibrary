@@ -13,6 +13,8 @@ export const fractionLatex=(numerator, denominator) => {
 class FractionTeacher {
 
   goodInput=false
+  goodProblemInput=false
+  goodAnswerInput=false
 
   //the teaching with the String functions
   teaching = FractionTeaching;
@@ -55,6 +57,10 @@ class FractionTeacher {
     return getRandomIntArray(4, 0, 24)
   }
 
+  fromNumeratorAndDenominatorProblem(args) {
+
+  }
+
   fromInteger(args){
     return this.teach(fromInteger, args)
   }
@@ -63,12 +69,50 @@ class FractionTeacher {
     return getRandomIntArray(2, 0, 100)
   }
 
+  fromIntegerProblem(args) {
+    
+  }
+
   addAFraction(args){
     return this.teach(addAFraction, args)
   }
 
   addAFractionArgs() {
     return getRandomIntArray(8, 0, 12)
+  }
+
+  addAFractionProblem(args) {
+    return getRandomIntArray(8, 0, 12)
+  }
+
+  giveProblem(method, args) {
+    try{
+      const problem=method(args)
+      //validate arguments
+      //problem summmary
+      //coded problem function
+      //coded latex function
+      //coded answer values in a sequence
+      //latex expects problems in an order
+      console.log(problem)
+      this.goodProblemInput=true
+      return problem
+    } catch(error) {
+      console.log(error)
+      return [this.teaching.tellBadInput()]
+    }
+  }
+
+  giveAnswer(method, args) {
+    try{
+      this.goodAnswerInput=false
+      const answer=method(args)
+      this.goodAnswerInput=true
+      return answer
+    } catch(error) {
+      console.log(error)
+      return [this.teaching.tellBadInput()]
+    }
   }
 
   teach(method, args){
