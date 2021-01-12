@@ -51,12 +51,24 @@ class FractionTeacher {
     return this.teach(fromNumeratorAndDenominator, args)
   }
 
+  fromNumeratorAndDenominatorArgs() {
+    return getRandomIntArray(4, 0, 24)
+  }
+
   fromInteger(args){
     return this.teach(fromInteger, args)
   }
 
+  fromIntegerArgs() {
+    return getRandomIntArray(2, 0, 100)
+  }
+
   addAFraction(args){
     return this.teach(addAFraction, args)
+  }
+
+  addAFractionArgs() {
+    return getRandomIntArray(8, 0, 12)
   }
 
   teach(method, args){
@@ -69,10 +81,6 @@ class FractionTeacher {
       console.log(error)
       return [this.teaching.tellBadInput()]
     }
-  }
-
-  addAFractionArgs() {
-    return getRandomIntArray(4, 0, 12)
   }
 
 }
