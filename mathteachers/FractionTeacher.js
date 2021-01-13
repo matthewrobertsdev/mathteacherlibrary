@@ -3,6 +3,7 @@ import {addAFraction} from './FractionTeacherMethods/AddFractiontoFraction'
 import {fromNumeratorAndDenominator} from './FractionTeacherMethods/CreatFromNumeratorAndDenominator'
 import {fromInteger} from './FractionTeacherMethods/CreateFractionFromInteger'
 import {getRandomIntArray} from '../utilities/GetRandomInt'
+import {addAFractionProblem} from './FractionTeacherMethods/AddFractiontoFraction'
 
 
 //latex for a fraction
@@ -82,7 +83,7 @@ class FractionTeacher {
   }
 
   addAFractionProblem(args) {
-    return getRandomIntArray(8, 0, 12)
+    return addAFractionProblem(args)
   }
 
   giveProblem(method, args) {

@@ -205,3 +205,11 @@ export const tryToSimplify=function tryToSimplify(numerator, denom, fraction) {
     teaching.checkOutSimplifyingFractions]
   }
 }
+
+export const addAFractionProblem=function addAFractionProblem(args) {
+  if (args===undefined || isNaN(parseInt(args[2])) || isNaN(parseInt(args[4])) ||
+    isNaN(parseInt(args[6])) || isNaN(parseInt(args[8]))) {
+    //throw Error("Bad Input")
+  }
+  return teaching.addAFractionProblem(args[2],args[4],args[6],args[8], fractionLatex(args[2],args[4])+"+"+fractionLatex(args[6],args[8]))
+}
