@@ -15,10 +15,9 @@ export const addAFraction=(args) => {
       initialization
     ]
     return lesson
-  } else if (isNaN(parseInt(args[2])) || isNaN(parseInt(args[4])) ||
-    isNaN(parseInt(args[6])) || isNaN(parseInt(args[8]))) {
-    throw Error("Bad Input")
-  } else if ((parseInt(args[4])===0&&parseInt(args[2])!==0)||(parseInt(args[8])===0&&parseInt(args[6])!==0)){
+  }
+  validateParams(args)
+  if ((parseInt(args[4])===0&&parseInt(args[2])!==0)||(parseInt(args[8])===0&&parseInt(args[6])!==0)){
     return [teaching.undefinedAddition(
       teaching.addAFractionProblem(args[2],args[4],args[6],args[8], fractionLatex(args[2],args[4])+"+"+fractionLatex(args[6],args[8])))]
   } else if (parseInt(args[4])===0||parseInt(args[8])===0){
@@ -206,10 +205,15 @@ export const tryToSimplify=function tryToSimplify(numerator, denom, fraction) {
   }
 }
 
-export const addAFractionProblem=function addAFractionProblem(args) {
+function validateParams(args){
   if (args===undefined || isNaN(parseInt(args[2])) || isNaN(parseInt(args[4])) ||
     isNaN(parseInt(args[6])) || isNaN(parseInt(args[8]))) {
-    //throw Error("Bad Input")
+    throw Error("Bad Input")
   }
-  return teaching.addAFractionProblem(args[2],args[4],args[6],args[8], fractionLatex(args[2],args[4])+"+"+fractionLatex(args[6],args[8]))
+}
+
+export const addAFractionProblem=function addAFractionProblem(args) {
+  validateParams(args)
+  return [[teaching.addAFractionProblem(args[2],args[4],args[6],args[8], 
+    fractionLatex(args[2],args[4])+"+"+fractionLatex(args[6],args[8]))]]
 }

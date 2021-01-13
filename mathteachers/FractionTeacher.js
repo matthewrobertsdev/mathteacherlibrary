@@ -1,9 +1,8 @@
 import FractionTeaching from './mathteachings/FractionTeaching';
-import {addAFraction} from './FractionTeacherMethods/AddFractiontoFraction'
+import {addAFraction, addAFractionProblem} from './FractionTeacherMethods/AddFractiontoFraction'
 import {fromNumeratorAndDenominator} from './FractionTeacherMethods/CreatFromNumeratorAndDenominator'
-import {fromInteger} from './FractionTeacherMethods/CreateFractionFromInteger'
+import {fromInteger, fromIntegerProblem} from './FractionTeacherMethods/CreateFractionFromInteger'
 import {getRandomIntArray} from '../utilities/GetRandomInt'
-import {addAFractionProblem} from './FractionTeacherMethods/AddFractiontoFraction'
 
 
 //latex for a fraction
@@ -71,7 +70,7 @@ class FractionTeacher {
   }
 
   fromIntegerProblem(args) {
-    
+    return fromIntegerProblem(args)
   }
 
   addAFraction(args){
@@ -79,7 +78,7 @@ class FractionTeacher {
   }
 
   addAFractionArgs() {
-    return getRandomIntArray(8, 0, 12)
+    return getRandomIntArray(8, 0, 16)
   }
 
   addAFractionProblem(args) {
