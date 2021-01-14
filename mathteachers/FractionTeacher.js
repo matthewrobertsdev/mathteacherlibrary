@@ -1,6 +1,6 @@
 import FractionTeaching from './mathteachings/FractionTeaching';
 import {addAFraction, addAFractionProblem} from './FractionTeacherMethods/AddFractiontoFraction'
-import {fromNumeratorAndDenominator} from './FractionTeacherMethods/CreatFromNumeratorAndDenominator'
+import {fromNumeratorAndDenominator, fromNumeratorAndDenominatorProblem} from './FractionTeacherMethods/CreatFromNumeratorAndDenominator'
 import {fromInteger, fromIntegerProblem} from './FractionTeacherMethods/CreateFractionFromInteger'
 import {getRandomIntArray} from '../utilities/GetRandomInt'
 
@@ -58,7 +58,7 @@ class FractionTeacher {
   }
 
   fromNumeratorAndDenominatorProblem(args) {
-
+    return fromNumeratorAndDenominatorProblem(args)
   }
 
   fromInteger(args){

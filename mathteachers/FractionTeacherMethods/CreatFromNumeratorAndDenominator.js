@@ -17,10 +17,8 @@ export const fromNumeratorAndDenominator=(args)=> {
       initialization,
     ]
     return lesson
-  } else if (!isNaN(parseInt(args[2]))&&!isNaN(parseInt(args[4]))){
-  } else {
-    throw Error("Bad Input")
   }
+  validateParams(args)
   mathObject.createFromNumAndDenom([args[2], args[4]])
   let initialization = teaching.fromNumeratorAndDenominator(
     parseInt(args[2]), parseInt(args[4]), fractionLatex(parseInt(args[2]), parseInt(args[4]))
@@ -48,7 +46,7 @@ function simplify(args) {
     )
   } else if (denominator === 0) {
     return teaching.undefined(
-      parseInt(args[2]), fractionLatex(numerator, denominator)
+      parseInt(args[0]), fractionLatex(numerator, denominator)
     )
   } else if (denominator === 1) {
     return teaching.denominatorIs1(
@@ -112,4 +110,15 @@ function simplify(args) {
     )
     return primeFactorsTeaching
   }
+}
+
+function validateParams(args){
+  if (isNaN(parseInt(args[2]))||isNaN(parseInt(args[4]))){
+    throw Error("Bad Input")
+  }
+}
+
+export const fromNumeratorAndDenominatorProblem=function fromNumeratorAndDenominatorProblem(args) {
+  validateParams(args)
+  return [[`{str-c}numerator: ${args[2]}`], [`{str-c}denominator: ${args[4]}`]]
 }
