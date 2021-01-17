@@ -4,6 +4,8 @@ import PrimeFactorization from '../math/PrimeFactorization';
 import Product from '../math/Product';
 import ListUtility from '../../utilities/ListUtility';
 import {fractionLatex} from './../FractionTeacher'
+import {fractionSolution} from './../Solutions/FractionSolutions'
+
 
 const teaching = FractionTeaching;
 
@@ -120,5 +122,6 @@ function validateParams(args){
 
 export const fromNumeratorAndDenominatorProblem=function fromNumeratorAndDenominatorProblem(args) {
   validateParams(args)
-  return [[`{str-c}numerator: ${args[2]}`], [`{str-c}denominator: ${args[4]}`]]
+  return {problem: [[`{str-c}numerator: ${args[2]}`], [`{str-c}denominator: ${args[4]}`]],
+  solutions: fractionSolution}
 }

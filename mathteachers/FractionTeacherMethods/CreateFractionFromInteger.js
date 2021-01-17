@@ -1,5 +1,6 @@
 import FractionTeaching from '../mathteachings/FractionTeaching';
 import {fractionLatex} from './../FractionTeacher'
+import {fractionSolution} from './../Solutions/FractionSolutions'
 
 const teaching = FractionTeaching;
 
@@ -28,5 +29,6 @@ function validateParams(args){
 
 export const fromIntegerProblem=function fromIntegerProblem(args) {
   validateParams(args)
-  return [[`{str-c}integer: ${args[2]}`]]
+  return {problem: [[`{str-c}integer: ${args[2]}`]],
+  solutions: fractionSolution}
 }

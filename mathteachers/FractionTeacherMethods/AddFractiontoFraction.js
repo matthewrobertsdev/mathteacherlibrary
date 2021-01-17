@@ -4,6 +4,7 @@ import PrimeFactorization from '../math/PrimeFactorization';
 import Product from '../math/Product';
 import ListUtility from '../../utilities/ListUtility';
 import {fractionLatex} from './../FractionTeacher'
+import {fractionSolution} from './../Solutions/FractionSolutions'
 
 const teaching = FractionTeaching;
 
@@ -214,6 +215,7 @@ function validateParams(args){
 
 export const addAFractionProblem=function addAFractionProblem(args) {
   validateParams(args)
-  return [[teaching.addAFractionProblem(args[2],args[4],args[6],args[8], 
-    fractionLatex(args[2],args[4])+"+"+fractionLatex(args[6],args[8]))]]
+  return {problem: [[teaching.addAFractionProblem(args[2],args[4],args[6],args[8], 
+    fractionLatex(args[2],args[4])+"+"+fractionLatex(args[6],args[8]))]],
+  solutions: fractionSolution}
 }
