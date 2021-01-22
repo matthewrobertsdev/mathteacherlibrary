@@ -20,10 +20,12 @@ export const addAFraction=(args) => {
   validateParams(args)
   if ((parseInt(args[4])===0&&parseInt(args[2])!==0)||(parseInt(args[8])===0&&parseInt(args[6])!==0)){
     return [teaching.undefinedAddition(
-      teaching.addAFractionProblem(args[2],args[4],args[6],args[8], fractionLatex(args[2],args[4])+"+"+fractionLatex(args[6],args[8])))]
+      teaching.addAFractionProblem(args[2],args[4],args[6],args[8], fractionLatex(args[2],args[4])+"+"+fractionLatex(args[6],args[8]))),
+    ['undefined']]
   } else if (parseInt(args[4])===0||parseInt(args[8])===0){
     return [teaching.indeterminateAddition(
-      teaching.addAFractionProblem(args[2],args[4],args[6],args[8], fractionLatex(args[2],args[4])+"+"+fractionLatex(args[6],args[8])))]
+      teaching.addAFractionProblem(args[2],args[4],args[6],args[8], fractionLatex(args[2],args[4])+"+"+fractionLatex(args[6],args[8]))),
+    ['indeterminate']]
   
   }
   if (!PrimeFactorization.absVal100_000_000OrLess(parseInt(args[2]))
@@ -137,6 +139,9 @@ export const addAFraction=(args) => {
       teaching.solutionHeading,
       teaching.tellFraction(fractionSolution.numerator, fractionSolution.denominator,
         fractionLatex(fractionSolution.numerator, fractionSolution.denominator))
+    ],
+    [
+      fractionLatex(fractionSolution.numerator, fractionSolution.denominator)
     ]
       ]
     }

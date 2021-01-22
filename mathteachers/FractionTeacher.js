@@ -3,6 +3,7 @@ import {addAFraction, addAFractionProblem} from './FractionTeacherMethods/AddFra
 import {fromNumeratorAndDenominator, fromNumeratorAndDenominatorProblem} from './FractionTeacherMethods/CreatFromNumeratorAndDenominator'
 import {fromInteger, fromIntegerProblem} from './FractionTeacherMethods/CreateFractionFromInteger'
 import {getRandomIntArray} from '../utilities/GetRandomInt'
+import MathTeacher from './MathTeacher'
 
 
 //latex for a fraction
@@ -10,7 +11,7 @@ export const fractionLatex=(numerator, denominator) => {
   return `\\frac{${numerator}}{${denominator}}`
 }
 
-class FractionTeacher {
+class FractionTeacher extends MathTeacher{
 
   goodInput=false
   goodProblemInput=false
@@ -54,7 +55,7 @@ class FractionTeacher {
   }
 
   fromNumeratorAndDenominatorArgs() {
-    return getRandomIntArray(4, 0, 24)
+    return getRandomIntArray(4, 0, 60)
   }
 
   fromNumeratorAndDenominatorProblem(args) {
@@ -66,7 +67,7 @@ class FractionTeacher {
   }
 
   fromIntegerArgs() {
-    return getRandomIntArray(2, 0, 100)
+    return getRandomIntArray(2, 0, 1000)
   }
 
   fromIntegerProblem(args) {
