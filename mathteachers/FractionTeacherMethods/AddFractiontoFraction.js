@@ -54,13 +54,15 @@ export const addAFraction=(args) => {
       if (fraction.numerator % fraction.denominator === 0) {
         answer = [
           teaching.solutionHeading,
-          teaching.tellInteger(fraction.numerator / fraction.denominator)
+          teaching.tellInteger(fraction.numerator / fraction.denominator),
+          fractionLatex(fraction.numerator, fraction.denominator)
         ]
       } else {
         answer = [
           teaching.solutionHeading,
           teaching.tellFraction(fraction.numerator, fraction.denominator,
-            fractionLatex(fraction.numerator, fraction.denominator))
+            fractionLatex(fraction.numerator, fraction.denominator)),
+            fractionLatex(fraction.numerator, fraction.denominator)
         ]
       }
       solution = [
@@ -175,6 +177,9 @@ function tellFactorLCDSolution(initialization, denom1, numerator1, numerator2, d
       teaching.solutionHeading,
       teaching.tellFraction(fractionSolution.numerator, fractionSolution.denominator,
         fractionLatex(fractionSolution.numerator, fractionSolution.denominator))
+    ],
+    [
+    fractionLatex(fractionSolution.numerator, fractionSolution.denominator)
     ]
   ]
 }
