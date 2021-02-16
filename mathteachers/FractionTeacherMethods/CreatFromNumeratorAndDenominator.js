@@ -34,6 +34,7 @@ export const fromNumeratorAndDenominator=(args)=> {
 }
 
 function simplify(args) {
+  let primeFactorsTeaching=[]
   let mathObject = new Fraction()
   mathObject.createFromNumAndDenom([args[0], args[1]])
   let numerator = parseInt(args[0])
@@ -43,37 +44,51 @@ function simplify(args) {
     return []
   }
   else if (numerator === 0 && denominator === 0) {
-    return teaching.indeterminate(
-      fractionLatex(numerator, denominator)
+    primeFactorsTeaching.push(teaching.indeterminate(
+      fractionLatex(numerator, denominator))
     )
+    primeFactorsTeaching.push('indeterminate')
+    return primeFactorsTeaching
   } else if (denominator === 0) {
-    return teaching.undefined(
+    primeFactorsTeaching.push(teaching.undefined(
       parseInt(args[0]), fractionLatex(numerator, denominator)
-    )
+    ))
+    primeFactorsTeaching.push('undefined')
+    return primeFactorsTeaching
   } else if (denominator === 1) {
-    return teaching.denominatorIs1(
+    primeFactorsTeaching.push(teaching.denominatorIs1(
       numerator, fractionLatex(numerator, denominator)
-    )
+    ))
+    primeFactorsTeaching.push(fractionLatex(numerator, 1))
+    return primeFactorsTeaching
   } else if (numerator === 1) {
-    return teaching.numeratorIs1(
-      denominator, fractionLatex(numerator, denominator)
-    )
+    primeFactorsTeaching.push(teaching.numeratorIs1(
+      denominator, fractionLatex(1, denominator)
+    ))
+    primeFactorsTeaching.push(fractionLatex(numerator, denominator))
+    return primeFactorsTeaching
   } else if (denominator === numerator) {
     mathObject.createFromNumAndDenom([1, 1])
-    return teaching.numeratorEqualsDenominator(
+    primeFactorsTeaching.push(teaching.numeratorEqualsDenominator(
       numerator, denominator,
-      fractionLatex(numerator, denominator)
-    )
+      fractionLatex(1, 1)
+    ))
+    primeFactorsTeaching.push(fractionLatex(numerator, denominator))
+    return primeFactorsTeaching
   } else if (denominator % numerator === 0) {
     mathObject.createFromNumAndDenom([1, denominator / numerator])
-    return teaching.denominatorModNumeratorIs0(
+    primeFactorsTeaching.push(teaching.denominatorModNumeratorIs0(
       numerator, denominator, fractionLatex(1, denominator / numerator), denominator / numerator
-    )
+    ))
+    primeFactorsTeaching.push(fractionLatex(1, denominator/numerator))
+    return primeFactorsTeaching
   } else if (numerator % denominator === 0) {
     mathObject.createFromNumAndDenom([numerator / denominator, 1])
-    return teaching.numeratorModDenominatorIs0(
+    primeFactorsTeaching.push(teaching.numeratorModDenominatorIs0(
       numerator, denominator, numerator / denominator
-    )
+    ))
+    primeFactorsTeaching.push(fractionLatex(numerator/denominator, 1))
+    return primeFactorsTeaching
   } else if (!PrimeFactorization.absVal100_000_000OrLess(numerator)
     || !PrimeFactorization.absVal100_000_000OrLess(denominator)) {
     let disclaimer = [teaching.tryToSimplify]
@@ -87,7 +102,7 @@ function simplify(args) {
     const gcf = Product.getProductOfList(primes);
     mathObject.numerator /= gcf;
     mathObject.denominator /= gcf;
-    let primeFactorsTeaching = teaching.getPrimeFactors(
+    primeFactorsTeaching = teaching.getPrimeFactors(
       numerator, nArray,
       denominator, dArray)
     primeFactorsTeaching.push('{br}')
@@ -110,6 +125,7 @@ function simplify(args) {
       teaching.tellFraction(
         mathObject.numerator, mathObject.denominator, fractionLatex(mathObject.numerator, mathObject.denominator))
     )
+    primeFactorsTeaching.push(fractionLatex(mathObject.numerator, mathObject.denominator))
     return primeFactorsTeaching
   }
 }

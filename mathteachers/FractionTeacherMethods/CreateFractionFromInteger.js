@@ -16,7 +16,10 @@ export const fromInteger=(args)=> {
   validateParams(args)
     let initialization = teaching.fromInteger(parseInt(args[2]), fractionLatex(parseInt(args[2]), 1))
     let lesson = [
-      initialization
+      initialization,
+      [
+        fractionLatex(args[2], 1)
+      ]
     ]
     return lesson
 }
